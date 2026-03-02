@@ -1,0 +1,3 @@
+com\photobooth\PhotoBoothApplication.class
+com\photobooth\controller\PhotoController.class
+com\photobooth\controller\PhotoController$PhotoRequest.class
