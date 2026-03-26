@@ -18,7 +18,7 @@ if %errorlevel% neq 0 (
 
 :: 2. Chay ung dung
 echo Dang khoi dong may chu...
-start /b java -jar GlowBooth.jar
+start /b java -jar GlowBooth.jar --server.port=8081 --dslr.capture.folder=C:/Users/Admin/Pictures
 
 :: 3. Cho doi va mo cua so App
 echo Dang cho ung dung san sang (5s)...
@@ -26,11 +26,11 @@ timeout /t 5 /nobreak > nul
 
 echo Dang mo cua so Photo Booth...
 :: Thu bat bang Edge App Mode
-start msedge --app=http://localhost:8080 --window-size=1200,800
+start msedge --app=http://localhost:8081 --window-size=1200,800
 
 if %errorlevel% neq 0 (
     echo Khong tim thay Edge, dang thu mo bang trinh duyet mac dinh...
-    start http://localhost:8080
+    start http://localhost:8081
 )
 
 echo.
