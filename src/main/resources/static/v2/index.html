@@ -78,7 +78,7 @@
                 </button>
             </div>
 
-            <div style="text-align: center;">
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
                 <button id="btn-confirm-layout" class="btn btn-primary" style="padding: 18px 60px; font-size: 1.3rem; border-radius: 50px;">Tiếp tục chụp ảnh ➡️</button>
             </div>
         </div>
@@ -130,16 +130,16 @@
                         <div id="countdown"></div>
                     </div>
 
-                    <div class="controls">
-                        <button id="snap" class="btn btn-primary">
-                            <span style="font-size: 1.2rem;">📸</span> Chụp đơn
+                    <div class="controls" style="justify-content: center;">
+                        <button id="btn-snap-main" class="btn btn-primary" style="padding: 20px 80px; font-size: 1.5rem; border-radius: 50px; background: var(--accent-pink); box-shadow: 0 10px 20px rgba(242, 139, 159, 0.3);">
+                            <span style="font-size: 1.8rem; margin-right: 10px;">📸</span> <span id="snap-button-text">Bắt đầu chụp</span>
                         </button>
-                        <button id="multi-snap" class="btn btn-primary" style="background: #f28b9f;">
-                            <span style="font-size: 1.2rem;">🎞️</span> Chụp 4 ảnh
-                        </button>
-                        <button id="snap-8" class="btn btn-primary" style="background: #e06c75;">
-                            <span style="font-size: 1.2rem;">🎬</span> Chụp 6 ảnh (Khuyên dùng)
-                        </button>
+                        <!-- Legacy buttons hidden -->
+                        <div style="display: none;">
+                            <button id="snap"></button>
+                            <button id="multi-snap"></button>
+                            <button id="snap-8"></button>
+                        </div>
                     </div>
                 </section>
 

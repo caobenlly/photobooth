@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnPrintStrip = document.getElementById('btn-print-strip');
     const btnPrintModal = document.getElementById('btn-print-modal');
     const snap8 = document.getElementById('snap-8');
+    const btnSnapMain = document.getElementById('btn-snap-main');
+    const snapButtonText = document.getElementById('snap-button-text');
     const btnConfirmRetake = document.getElementById('btn-confirm-retake');
     const btnSkipRetake = document.getElementById('btn-skip-retake');
     const selectionGrid = document.getElementById('selection-grid');
@@ -268,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         multiSnap.disabled = true;
         if (snap8) snap8.disabled = true;
+        if (btnSnapMain) btnSnapMain.disabled = true;
 
         for (let i = 0; i < total; i++) {
             progressFill.style.width = `${(i / total) * 100}%`;
@@ -289,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         progressContainer.style.display = 'none';
         multiSnap.disabled = false;
         if (snap8) snap8.disabled = false;
+        if (btnSnapMain) btnSnapMain.disabled = false;
         isCapturing = false;
 
         if (total === 8) {
@@ -299,8 +303,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    multiSnap.onclick = () => handleMultiSnap(4);
+    multiSnap.onclick = () => {
+        const totalPhotos = (currentLayout === 'horizontal-2') ? 2 : 4;
+        handleMultiSnap(totalPhotos);
+    };
     if (snap8) snap8.onclick = () => handleMultiSnap(6);
+
+    if (btnSnapMain) {
+        btnSnapMain.onclick = () => {
+            const totalPhotos = (currentLayout === 'horizontal-2') ? 2 : 4;
+            handleMultiSnap(totalPhotos);
+        };
+    }
+
+    function updateSnapButtonLabel() {
+        if (!snapButtonText) return;
+        const totalPhotos = (currentLayout === 'horizontal-2') ? 2 : 4;
+        snapButtonText.innerText = `Chụp ${totalPhotos} tấm`;
+    }
 
     // --- SELECTION & RETAKE ---
     function showSelectionScreen() {

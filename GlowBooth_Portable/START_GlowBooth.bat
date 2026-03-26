@@ -1,9 +1,9 @@
 @echo off
 setlocal
-title GlowBooth Portable Launcher
+title TiniBooth Portable Launcher
 
 echo --------------------------------------------------
-echo        DANG KHOI CHAY GLOWBOOTH PORTABLE
+echo        DANG KHOI CHAY TINIIBOOTH PORTABLE
 echo --------------------------------------------------
 
 :: 1. Kiem tra Java

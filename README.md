@@ -1,4 +1,4 @@
-# GlowBooth - Pro Photo Booth App
+# TiniBooth - Pro Photo Booth App
 
 A modern, high-aesthetic photo booth application built with **Java (Spring Boot)** and **Vanilla Web Technologies**.
 
